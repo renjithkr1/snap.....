@@ -1,0 +1,45 @@
+<md-toolbar layout="row">
+    <div class="md-toolbar-tools">
+        <md-button ng-click="$ctrl.onToggleSideMenu()" class="md-icon-button">
+            <md-icon aria-label="Side Menu" md-font-icon="material-icons">menu</md-icon>
+        </md-button>
+        <img class="logo" hide-xs src="../../../../assets/images/logo.png" alt="logo">
+        <img class="logo-small" hide-gt-xs src="../../../../assets/images/logo-small.png" alt="logo">
+        <h5 ng-if="$ctrl.state && $ctrl.state.data && $ctrl.state.data.moduleTitle" class="header-con" ng-bind="$ctrl.state.data.moduleTitle"></h5>
+        <span flex></span>
+        <label class="info-con" flex="5">
+             <md-icon aria-label="Side Menu" md-font-icon="material-icons">playlist_add_check</md-icon>
+             <span ng-bind="$ctrl.numberOfTodos"></span>
+        </label>
+        <label class="info-con" flex="5">
+             <md-icon aria-label="Side Menu" md-font-icon="material-icons">done_all</md-icon>
+             <span ng-bind="$ctrl.completedTodos"></span>
+        </label>
+        <label class="info-con" flex="5">
+             <md-icon aria-label="Side Menu" md-font-icon="material-icons">hourglass_empty</md-icon>
+             <span ng-bind="$ctrl.notCompletedTodos"></span>
+        </label>
+        <md-menu md-offset="0 60">
+            <md-button ng-click="$mdMenu.open($event)" class="md-icon-button">
+                <md-icon aria-label="Menu" md-font-icon="material-icons">more_vert</md-icon>
+            </md-button>
+            <md-menu-content width="3">
+                <md-menu-item>
+                    <md-button>
+                        <md-icon aria-label="Settings" md-font-icon="material-icons">account_circle</md-icon>Profile
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button>
+                        <md-icon aria-label="Settings" md-font-icon="material-icons">settings</md-icon>Settings
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="$ctrl.onLogoutClick()" md-prevent-menu-close="md-prevent-menu-close">
+                        <md-icon aria-label="Settings" md-font-icon="material-icons">lock</md-icon> Logout
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </div>
+</md-toolbar>

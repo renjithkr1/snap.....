@@ -1,0 +1,37 @@
+todo {
+	.list-header {
+		padding: 15px;
+		margin: 5px;
+		md-input-container {
+			margin: 10px 0 0;
+		}
+	}
+
+	.list-item-con {
+		overflow-y: auto;
+		height: 300px;
+		display: block;
+	}
+
+	.list-item {
+		padding: 15px;
+		margin: 5px;
+		line-height: 40px;
+
+		md-checkbox {
+			margin-bottom: 0;
+		}
+
+		.title {
+			text-transform: capitalize;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		&.active {
+			.title {
+				text-decoration: line-through;
+			}
+		}
+	}
+}
